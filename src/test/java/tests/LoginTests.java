@@ -32,6 +32,7 @@ public class LoginTests {
                 .statusCode(200)
                 .body("token", is("QpwL5tke4Pnpja7X4"));
     }
+
     @Test
     void missingPasswordTest() {
         String authBody = "{ \"email\": \"eve.holt@reqres.in\" }"; // BAD PRACTICE
@@ -50,7 +51,6 @@ public class LoginTests {
                 .statusCode(400)
                 .body("error", is("Missing password"));
     }
-
 
     @Test
     void negative400LoginTest() {
